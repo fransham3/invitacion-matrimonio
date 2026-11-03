@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graciela y Marcelo · Nuestro matrimonio</title>
+  <meta name="description" content="Graciela y Marcelo te invitan a celebrar su matrimonio civil.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ACCESO CON CONTRASEÑA -->
+  <section class="acceso" id="acceso">
+    <div class="acceso__caja">
+      <h1>Invitación privada</h1>
+      <p>Ingresa la contraseña que te enviamos para ver la invitación.</p>
+      <form id="form-acceso" novalidate>
+        <label class="visualmente-oculto" for="clave">Contraseña</label>
+        <input id="clave" class="acceso__campo" type="text" placeholder="Contraseña" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="go" required>
+        <p id="acceso-error" class="acceso__error" role="alert"></p>
+        <button class="btn" type="submit">Entrar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- INVITACIÓN (oculta hasta ingresar la contraseña) -->
+  <div id="contenido" hidden>
+  <!-- Botón de música (siempre visible) -->
+  <button id="btn-musica" class="musica" type="button" aria-pressed="false" aria-label="Activar música">
+    <svg class="ico-on" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+    <svg class="ico-off" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="m16 9 5 6"/><path d="m21 9-5 6"/></svg>
+  </button>
+  <audio id="audio" src="imagenes/Happy.mp3" loop preload="auto"></audio>
+
+  <!-- 1. INICIO -->
+  <header class="inicio" id="inicio">
+    <h1 class="inicio__logo">
+      <img src="imagenes/floral.webp" alt="Graciela y Marcelo" width="1000" height="1000"
+           onerror="this.onerror=null;this.src='imagenes/floral.png'">
+    </h1>
+    <p class="inicio__fecha">28 de noviembre de 2026</p>
+    <button id="btn-abrir" class="btn" type="button">Activar sonido</button>
+  </header>
+
+  <div class="onda" style="--desde:var(--blanco);--hacia:var(--aguacate-claro)" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"/></svg></div>
+
+  <main>
+    <!-- 2. FOTO DE LOS NOVIOS -->
+    <section class="novios" id="novios">
+      <figure class="novios__marco">
+        <img src="imagenes/Pareja.png" alt="Foto de los novios" loading="lazy">
+      </figure>
+      <p class="novios__texto">Te invitamos a celebrar nuestro matrimonio civil. Luego disfrutaremos de un cóctel, música, baile, fotos y sorpresas muy entretenidas. ¡Acompáñanos!</p>
+    </section>
+
+    <div class="onda onda--espejo" style="--desde:var(--aguacate-claro);--hacia:var(--blanco)" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"/></svg></div>
+
+    <!-- 3. FECHA -->
+    <section class="fecha" id="fecha">
+      <h2>Sábado 28 de noviembre</h2>
+      <p class="fecha__hora"><strong>16:30 horas</strong></p>
+      <div class="cuenta" id="cuenta" aria-live="off">
+        <div><strong id="c-dias">0</strong><span>días</span></div>
+        <div><strong id="c-horas">0</strong><span>horas</span></div>
+        <div><strong id="c-min">0</strong><span>minutos</span></div>
+        <div><strong id="c-seg">0</strong><span>segundos</span></div>
+      </div>
+    </section>
+
+    <div class="onda" style="--desde:var(--blanco);--hacia:var(--aguacate-claro)" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"/></svg></div>
+
+    <!-- 4 y 5. DIRECCIÓN + MAPA -->
+    <section class="lugar" id="lugar">
+      <h2>Dónde nos vemos</h2>
+      <p class="lugar__nombre">Mauricio Rugendas 5409, Casa I</p>
+      <address>Macul, Santiago</address>
+      <a id="btn-mapa" class="btn" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
+    </section>
+
+    <div class="onda onda--espejo" style="--desde:var(--aguacate-claro);--hacia:var(--terracota)" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"/></svg></div>
+
+    <!-- 6. SUBIR FOTOS -->
+    <section class="fotos" id="fotos">
+      <h2>Tus fotos del matrimonio</h2>
+      <p>Queremos reunir las miradas, las risas y todos esos momentos que hacen especial este día.</p>
+      <p>Comparte tus fotos y videos con nosotros y ayúdanos a guardar también tu versión de este día. ❤️</p>
+      <a id="btn-fotos" class="btn btn--claro" href="#" target="_blank" rel="noopener">Subir fotos</a>
+    </section>
+  </main>
+
+  <div class="onda" style="--desde:var(--terracota);--hacia:var(--oliva)" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"/></svg></div>
+
+  <footer class="pie">Graciela y Marcelo · 2026</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
